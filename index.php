@@ -15,7 +15,7 @@
 	<div style="background-color:#023480; height:80px;">
 
 	  <div id="title">
-	      Welcome!
+	      Welcome to Pocket Organiser!
 	  </div>
 
 	  
@@ -48,7 +48,17 @@
 		</div>
 
 		<div id="subtitle">
-			A Basic ToDoMe Generator for Everybody.<br><br>  
+			A small to-do App for you and your friends.<br><br>  
+		</div>
+		
+		<div class="checkbox-item" style='width:1000px; padding-left:55px;'>
+			We provide services such as group management and organisation, <b>bill splitting</b> possibilities, settling arguments through <b>instant group or private messaging</b> or making
+			<b>To-Do Lists</b> for you and your friends.<br><br>  
+		</div>
+		
+		
+		<div class="checkbox-item" style='width:1000px; padding-left:55px;'>
+			Therefore,  
 		</div>
 		
 		<form class="checkbox-form" style="border-style:none; float:none; padding-left:55px; margin-left:0px; padding-top:30px;">
@@ -57,7 +67,7 @@
 			<input type="checkbox" class="regular-checkbox" checked> <span class="checkbox-item"> You want to be tidier and more organised?</span> <br>
 			<input type="checkbox" class="regular-checkbox" checked> <strike><span class="checkbox-item"> You want to hack NASA?</span></strike> <br>
 			<input type="checkbox" class="regular-checkbox" checked> <span class="checkbox-item"> We can help you.</span> <br>
-			<input type="checkbox" class="regular-checkbox"> <span class="checkbox-item"> Register! </span> <br>
+			<input type="checkbox" id='register_checkbox' class="regular-checkbox"> <span class="checkbox-item"> Register! </span> <br>
 		</form>
 	     <br><br>
 	     <div style="width:55px; height:132px; float:left;"></div>

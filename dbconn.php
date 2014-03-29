@@ -1,4 +1,10 @@
 <?php
+
+/**
+ *	The class that deals with the Database
+ *
+ */
+
 class Database {
 		
 	private $database;

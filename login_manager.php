@@ -5,8 +5,9 @@
 
 		$db = new Database();
 
-		$newusername="61636135351735274313";
+		$newusername="";
 		$newpassword="";
+		$loginsuccess=false;
 		
 		if (isset($_POST["username"]))  $newusername = prevent_XSS($_POST["username"]);
 		if (isset($_POST["password"]))  $newpassword = prevent_XSS($_POST["password"]);
@@ -17,8 +18,8 @@
 
 		$userids=$temp1->execute();
 
-		if (isset($_POST["username"]))
-			if(isset($_POST["password"]))
+		if (!empty($_POST["username"]))
+			if(!empty($_POST["password"]))
 		
 			while(($userrow = $userids->fetchArray())) 
 			{	
@@ -28,12 +29,15 @@
 				
 				if($userrow['hashedpassword']==$encrypted_password) 
 				{
-					header('location:dashboard.php');
+				    	$loginsuccess = true;
+					
 					$_SESSION['fullname'] = $userrow['fullname'];
 					$_SESSION['id'] = $userrow['userid'];
 					$_SESSION['username'] = $userrow['username'];
-				}else
-					header('location:index.php');
-				
+				}
 			}
+		if($loginsuccess)
+			header('location:dashboard.php');
+		else 
+		    	header('location:index.php');
 ?>

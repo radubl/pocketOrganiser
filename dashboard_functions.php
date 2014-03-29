@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * The functions that the dashboard page uses:
+ *	getUserUpdates() fetches the updates from the database in a cronological order and displays them. Also, it records the last view of the dashboard page and sorts the updates into Old and New
+ *	displayBalance() gets the balances of all the friends of our current user and sums all of them in order to get a general balance, also, it sepparates the positive and negative balances
+ *		so they would be displayed into 2 categories: monies owed to and who owes money to you. You can pay those you owe to via ajax by simply clicking on their name.
+ */
+
+date_default_timezone_set('UTC');
+
 function getUserUpdates(){
 
 $db = new Database();
@@ -37,7 +46,7 @@ $datecreatedpretty=$datecreated->format('dS') . " of " . $datecreated->format('F
 		$countold++;
 	}
 }
-date_default_timezone_set('UTC');
+
 $date = date('m/d/Y h:i:s a', time());
 
 $temp1 = $db->prepare("Update users SET datejoined=:date WHERE userid=:userid");
@@ -131,9 +140,18 @@ else
 }
 $temp_friend=$userrow['userid'];
 }
+if($i==0) $friendsrowsplus ='';
+if($j==0) $friendsrowsminus ='';
+if($friendsrowsminus == $friendsrowsplus)
+{
+	$output = '';
+}
+else
+{
+	$output.= $total_balance. '</span></div>';
+	$output.=$friendsrowsplus.$friendsrowsminus;
+}
 
-$output.= $total_balance. '</span></div>';
-$output.=$friendsrowsplus.$friendsrowsminus;
 return $output;
 
 }

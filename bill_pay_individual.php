@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+/**
+ * This script deals with the addition of an individual payment, from user to user, posted from the dashboard page.
+ * It updates the balance of the 2 users accordingy to the value transmitted via ajax and it posts an update for the user that receives the money.
+ *
+ */
+
+
 include 'dbconn.php';
 include 'security.php';
 

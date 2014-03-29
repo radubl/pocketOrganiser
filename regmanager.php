@@ -10,7 +10,7 @@ session_start();
 		
 		require 'dbconn.php';
 
-		date_default_timezone_set('Europe/London');
+		date_default_timezone_set('UTC');
 
 		$db = new Database();
 		$newfullname="";
@@ -78,6 +78,17 @@ session_start();
 				$_SESSION['fullname'] = $newfullname;
 				$_SESSION['id'] = $newuserid;
 				$_SESSION['username'] = $newusername;
+				
+				$usernotification = "Welcome to a better world!<br><br>Click on Manage Lists to add a new list. <br>You can
+				create a new group if you have some friends.";
+				
+				$temp = $db->prepare("INSERT INTO userupdates values(:message,:userid,:date)");
+					
+				$temp->bindValue(':userid',$newuserid, SQLITE3_INTEGER);
+				$temp->bindValue(':message',$usernotification, SQLITE3_TEXT);
+				$temp->bindValue(':date',$date, SQLITE3_TEXT);
+					
+				$temp->execute();
 			}
 			else $message = "<span style='color:red; font-family:'Varela Round';'>Passwords do not match.</span>";
 		}

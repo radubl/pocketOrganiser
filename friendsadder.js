@@ -1,3 +1,8 @@
+/**
+ *
+ *	Ajax functions that display the searched friends, and post the selected friends to either add or delete pages
+ *
+ */
 
 function displayMatchedFriends(){
 	

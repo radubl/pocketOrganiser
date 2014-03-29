@@ -18,7 +18,7 @@
 	  </div>
 	</div>
 	
-	<div id="title" style="width:1200px; color:#023480; font-size:30px;">
+	<div style="width:1200px; color:#023480; font-size:30px; clear:both; padding:10px; padding-left:55px;">
 	       though you should be thanking us, damn marketing.
 	</div>
 	
@@ -45,7 +45,7 @@
 		 <div style="padding-left:100px;">(to an unraveling world that has "never" been seen on the web before.)</div>
 		<br><br>
       </div>
-    
+    	<div style='clear:both; height:400px;'></div>
 
     </body>
   </html>

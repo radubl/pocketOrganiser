@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+/**
+ *	The Group class creates a pattern for all the groups created in the application.
+ *
+ *
+ */
+
+
 include 'group_displayer_manager.php';
 require "static_elements.php";
 include "dropdownfunctions.php";
@@ -61,7 +68,7 @@ class Group{
 								<input type='radio' id='prop' name='group1' value='Proportional' ><span class='checkbox-item'>Proportional Split.</span> 
 								<br><br>
 								
-								<div id='propsplit'>
+								<div id='propsplit' style ='position:relative;'>
 								".getMembersSplit($newtitle)."
 								</div>
 								<br>

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ *	This page contains all the functions that generate elements present on the majority of the pages, such as headers, menus, logos and such.
+ *
+ *
+ */
+
+
 require 'dbconn.php';
 
 

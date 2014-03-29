@@ -4,7 +4,7 @@
 function displayUpdates($groupname){
 
 	$db = new Database();
-	$output="<div style='width:700px; float:left; margin:80px 0px 0px 250px;><span class='list-title' style='font-size:20px;'>";
+	$output="<div style='width:700px; float:left; margin:80px 0px 0px 250px;><span class='list-title' style='font-size:25px;'>";
 	
 	$temp = $db->prepare("SELECT * from updates inner join users on users.userid=updates.userid inner join groups on groups.userid=users.userid
 			and groups.groupname=updates.groupname where updates.groupname=:groupname order by updates.datecreated DESC");
@@ -15,7 +15,7 @@ function displayUpdates($groupname){
 	
 	while($uprow=$updates->fetchArray())
 	{
-		$output.="<span class='list-title' style='font-size:20px; color:" .$uprow['usercolor'].";'>".$uprow['fullname'].":</span>";
+		$output.="<span class='list-title' style='font-size:25px; color:" .$uprow['usercolor'].";'>".$uprow['fullname'].":</span>";
 		
 		if($uprow['userid']==$_SESSION['id'])
 			$output.="<span style=' float:right; padding-top:10px;' class='delete_friends' 

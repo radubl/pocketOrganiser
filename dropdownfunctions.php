@@ -1,5 +1,10 @@
 <?php
 
+/**
+ *	This script offers all the functions in which it is involved a dropdown thing. All functions search the Database for a specific field and create a dropdown div that holds the values.
+ */
+
+
 function getDates(){
 $output='';
 $i=0;
@@ -142,8 +147,8 @@ while(($userrow = $friends->fetchArray()))
 {
 
 if($temp_friend!=$userrow['userid'])
-	$output.='<span class="friends">'.$userrow['fullname'].'</span>'
-	. "<input class='percentage' style='margin-top:10px; width:50px; float:left;' value='0'><br>";
+	$output.='<span class="friends" style="margin-bottom:20px;">'.$userrow['fullname'].'</span>'
+	. "<input class='percentage' style=' margin-bottom:20px; width:100px; position:absolute; left:200px;' value='0'><br>";
 else
 {
 	$temp = $db->prepare("DELETE FROM groups WHERE userid=:userid AND groupname=:groupname");

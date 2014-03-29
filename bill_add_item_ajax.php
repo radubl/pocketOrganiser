@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+/**
+ * This is the script that handles the addition of a PAID bill. It gets its variables through ajax.
+ * Firstly it creates the bill by inserting a new field in the Bill table.
+ * Then it splits the bill to all the users in the group the will was posted, following the pattern provided via ajax. This pattern is a string of the percentages all the group members should pay.
+ * It updates the Friends table, changing the balances accordingly for all the users
+ * Finally, it posts in the Individul Updates and Group Updates tables information about the paid bill.
+ */
 include 'dbconn.php';
 include 'security.php';
 include 'group_updates_displayer.php';

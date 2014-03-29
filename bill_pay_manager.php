@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+/**
+ * This script deals with the payment of an old bill, that has not been paid at the moment of its creation.
+ * Via ajax, it gets the bill ID, fetches it from the database, deals with the splitting and the updates for the users.
+ *
+ */
+
 include 'dbconn.php';
 include 'security.php';
 include 'group_updates_displayer.php';

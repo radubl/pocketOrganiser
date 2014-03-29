@@ -1,37 +1,16 @@
+/**
+ *
+ *	Handles the forms submitted 
+ 	Checkes for empty fields and imposes limitations on length of user inputs accordingly
+ *
+ */
 
 
 $(document).ready(function() {
-
-$('#reg-form').submit(function() {									//registration
-var message='';
-
-if($('[name="password"]').val().length<1)
-	message='Choose a valid password!';
-else
-	if($('[name="password"]').val()!=$('[name="password2"]').val())
-		message='Passwords do not match.';
-
-if($('[name="email"]').val().length<1)
-	message='Please give us your email so we can spam the shit out of you';
-if($('[name="email"]').val().length>50)
-	message='Our hamsters cannot comprehend the length of your email!';
-	
-if($('[name="fullname"]').val().length<1)
-	message='Choose a valid Full Name!';
-if($('[name="fullname"]').val().length>20)
-	message='Our hamsters cannot comprehend the length of your fullname!';
-	
-if($('[name="username"]').val().length<1)
-	message='Choose a valid username!';
-if($('[name="username"]').val().length>25)
-	message='Our hamsters cannot comprehend the length of your username!';
-
-if(message=='')
-	return true;
-
-alert(message);
-return false;
-	});
+    
+$('#register_checkbox').click(function(){
+    document.location.href = 'register.php';
+});
 
 $('#list-form').submit(function() {									//list-manager
 
